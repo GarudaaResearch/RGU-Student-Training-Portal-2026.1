@@ -34,7 +34,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-[var(--bg-app)]">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%)' }}>
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
@@ -55,7 +55,7 @@ export default function LoginPage() {
         </div>
 
         {/* Login card */}
-        <div className="card rounded-lg p-8 bg-[var(--bg-card)] border border-[var(--border-strong)]">
+        <div className="card rounded-lg p-8 bg-[var(--bg-card)] border border-[var(--border-strong)]" style={{ boxShadow: 'var(--shadow-xl)' }}>
           <h2 className="text-base font-semibold mb-6 text-[var(--text-primary)]">
             Sign in to your account
           </h2>

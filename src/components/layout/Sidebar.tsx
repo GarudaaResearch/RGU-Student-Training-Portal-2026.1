@@ -96,17 +96,16 @@ export default function Sidebar({ mobileOpen = false, onMobileClose }: SidebarPr
           }}
         >
           {/* Icon */}
-          <div
+          <img
+            src="/rgu-logo.png"
+            alt="RGU Logo"
             style={{
-              width: 30, height: 30,
-              borderRadius: 6,
-              background: 'var(--brand)',
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              width: 30,
+              height: 30,
+              objectFit: 'contain',
               flexShrink: 0,
             }}
-          >
-            <Sparkles size={15} color="#fff" />
-          </div>
+          />
 
           <AnimatePresence>
             {!collapsed && (

@@ -4,7 +4,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAuthStore } from '../../stores/authStore';
-import { Eye, EyeOff, LogIn, Sparkles } from 'lucide-react';
+import { Eye, EyeOff, LogIn } from 'lucide-react';
 import toast from 'react-hot-toast';
 
 export default function LoginPage() {
@@ -43,8 +43,8 @@ export default function LoginPage() {
       >
         {/* Logo — Fluent / Microsoft Inspired */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg mb-3 bg-[var(--bg-selected)] border border-[var(--brand-border)]">
-            <Sparkles size={22} className="text-[var(--brand)]" />
+          <div className="inline-flex items-center justify-center mb-3">
+            <img src="/rgu-logo.png" alt="Royal Group of Universities Logo" className="h-16 w-auto object-contain" />
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[var(--text-primary)]" style={{ margin: 0 }}>
             CII AI Training Hub

@@ -30,7 +30,10 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
   const notifRef   = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
 
-  const pageTitle = PAGE_TITLES[location.pathname] || 'CII AI Hub';
+  let pageTitle = PAGE_TITLES[location.pathname] || 'CII AI Hub';
+  if (location.pathname.startsWith('/sessions/') && location.pathname !== '/sessions') {
+    pageTitle = 'Session Details';
+  }
 
   const getName = () => {
     if (!user) return '';

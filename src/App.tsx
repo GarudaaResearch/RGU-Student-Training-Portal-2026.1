@@ -14,6 +14,7 @@ import LoginPage from './components/auth/LoginPage';
 import DashboardPage    from './components/dashboard/DashboardPage';
 import ModulesPage      from './components/lms/ModulesPage';
 import SessionsPage     from './components/sessions/SessionsPage';
+import SessionDetailsPage from './components/sessions/SessionDetailsPage';
 import IdeasPage        from './components/ideas/IdeasPage';
 import AIToolsPage      from './components/tools/AIToolsPage';
 import ReportsPage      from './components/reports/ReportsPage';
@@ -77,6 +78,7 @@ export default function App() {
 
           {/* Sessions — all roles */}
           <Route path="sessions" element={<SessionsPage />} />
+          <Route path="sessions/:id" element={<SessionDetailsPage />} />
 
           {/* Ideas Bank — all roles */}
           <Route path="ideas" element={<IdeasPage />} />

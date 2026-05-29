@@ -2,6 +2,7 @@
 // Sessions Page — Microsoft Learn / Fluent Design
 // ============================================================
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { MOCK_SESSIONS } from '../../data/mockData';
 import type { Session } from '../../types';
@@ -90,14 +91,16 @@ export default function SessionsPage() {
 function SessionCard({ session: s, index }: { session: Session; index: number }) {
   const isLive = s.status === 'live';
   const enrollment = s.maxParticipants ? Math.round(((s.enrolledCount || 0) / s.maxParticipants) * 100) : 0;
+  const navigate = useNavigate();
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.04, duration: 0.3 }}
-      className="card p-5 flex flex-col md:flex-row gap-4"
+      className="card p-5 flex flex-col md:flex-row gap-4 cursor-pointer hover:border-[var(--brand-border)] transition-all duration-200 hover:-translate-y-0.5"
       style={isLive ? { borderColor: 'var(--error-border)', boxShadow: '0 0 16px rgba(207,102,121,0.08)' } : {}}
+      onClick={() => navigate(`/sessions/${s.id}`)}
     >
       {/* Date block — aligned with Fluent Theme */}
       <div className="flex-shrink-0 flex flex-col items-center justify-center w-16 h-16 rounded-lg text-center"
@@ -158,7 +161,7 @@ function SessionCard({ session: s, index }: { session: Session; index: number })
       </div>
 
       {/* Action */}
-      <div className="flex flex-col gap-2 justify-center flex-shrink-0">
+      <div className="flex flex-col gap-2 justify-center flex-shrink-0" onClick={(e) => e.stopPropagation()}>
         {s.meetLink ? (
           <a href={s.meetLink} target="_blank" rel="noreferrer"
             className={`btn ${isLive ? 'btn-danger' : 'btn-primary'} gap-1.5`}
@@ -170,7 +173,7 @@ function SessionCard({ session: s, index }: { session: Session; index: number })
             <Users size={12} /> Register
           </button>
         )}
-        <button className="btn btn-ghost btn-sm text-[10px]" style={{ padding: '2px' }}>
+        <button className="btn btn-ghost btn-sm text-[10px]" style={{ padding: '2px' }} onClick={() => navigate(`/sessions/${s.id}`)}>
           View Details
         </button>
       </div>

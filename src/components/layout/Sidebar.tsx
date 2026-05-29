@@ -8,7 +8,8 @@ import { useAuthStore } from '../../stores/authStore';
 import {
   LayoutDashboard, BookOpen, Calendar, Lightbulb, Wrench,
   BarChart3, FileText, LogOut, Sparkles, ChevronLeft,
-  ChevronRight, GraduationCap, Shield, X, Trophy, Compass, BookMarked
+  ChevronRight, GraduationCap, Shield, X, Trophy, Compass, BookMarked,
+  MessageCircle
 } from 'lucide-react';
 
 interface NavItem {
@@ -30,6 +31,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Leaderboard',  path: '/leaderboard',  icon: <Trophy size={17} />,          roles: ['student'] },
   { label: 'Reports',      path: '/reports',      icon: <BarChart3 size={17} />,       roles: ['faculty','admin'] },
   { label: 'Certificates', path: '/certificates', icon: <FileText size={17} />,        roles: ['student'] },
+  { label: 'WhatsApp Help - Join', path: '/whatsapp-help', icon: <MessageCircle size={17} />, roles: ['student','faculty','admin'] },
 ];
 
 interface SidebarProps {

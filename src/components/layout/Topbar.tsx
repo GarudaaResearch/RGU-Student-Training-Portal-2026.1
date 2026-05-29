@@ -17,6 +17,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/certificates': 'My Certificates',
   '/profile':      'My Profile',
   '/leaderboard':  'Leaderboard',
+  '/whatsapp-help': 'WhatsApp Support Group',
 };
 
 interface TopbarProps { onMenuClick: () => void; }

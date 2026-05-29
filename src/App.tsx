@@ -15,6 +15,7 @@ import DashboardPage    from './components/dashboard/DashboardPage';
 import ModulesPage      from './components/lms/ModulesPage';
 import SessionsPage     from './components/sessions/SessionsPage';
 import SessionDetailsPage from './components/sessions/SessionDetailsPage';
+import WhatsappHelpPage from './components/support/WhatsappHelpPage';
 import IdeasPage        from './components/ideas/IdeasPage';
 import AIToolsPage      from './components/tools/AIToolsPage';
 import ReportsPage      from './components/reports/ReportsPage';
@@ -79,6 +80,9 @@ export default function App() {
           {/* Sessions — all roles */}
           <Route path="sessions" element={<SessionsPage />} />
           <Route path="sessions/:id" element={<SessionDetailsPage />} />
+
+          {/* WhatsApp Support Help — all roles */}
+          <Route path="whatsapp-help" element={<WhatsappHelpPage />} />
 
           {/* Ideas Bank — all roles */}
           <Route path="ideas" element={<IdeasPage />} />

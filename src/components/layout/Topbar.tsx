@@ -18,6 +18,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/profile':      'My Profile',
   '/leaderboard':  'Leaderboard',
   '/whatsapp-help': 'WhatsApp Support Group',
+  '/invitation':    'Event Invitation',
 };
 
 interface TopbarProps { onMenuClick: () => void; }

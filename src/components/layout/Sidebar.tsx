@@ -9,7 +9,7 @@ import {
   LayoutDashboard, BookOpen, Calendar, Lightbulb, Wrench,
   BarChart3, FileText, LogOut, Sparkles, ChevronLeft,
   ChevronRight, GraduationCap, Shield, X, Trophy, Compass, BookMarked,
-  MessageCircle
+  MessageCircle, MailOpen
 } from 'lucide-react';
 
 interface NavItem {
@@ -23,6 +23,7 @@ interface NavItem {
 const NAV_ITEMS: NavItem[] = [
   { label: 'Dashboard',    path: '/dashboard',    icon: <LayoutDashboard size={17} />, roles: ['student','faculty','admin'] },
   { label: 'Program Agenda', path: '/agenda',     icon: <Compass size={17} />,         roles: ['student','faculty','admin'] },
+  { label: 'Event Invitation', path: '/invitation', icon: <MailOpen size={17} />,      roles: ['student','faculty','admin'] },
   { label: 'Tutorial - AI', path: '/tutorial-ai', icon: <BookMarked size={17} />,      roles: ['student','faculty','admin'] },
   { label: 'Modules',      path: '/modules',      icon: <BookOpen size={17} />,        roles: ['student','faculty','admin'] },
   { label: 'Sessions',     path: '/sessions',     icon: <Calendar size={17} />,        roles: ['student','faculty','admin'] },

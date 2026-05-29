@@ -16,6 +16,7 @@ import ModulesPage      from './components/lms/ModulesPage';
 import SessionsPage     from './components/sessions/SessionsPage';
 import SessionDetailsPage from './components/sessions/SessionDetailsPage';
 import WhatsappHelpPage from './components/support/WhatsappHelpPage';
+import InvitationPosterPage from './components/support/InvitationPosterPage';
 import IdeasPage        from './components/ideas/IdeasPage';
 import AIToolsPage      from './components/tools/AIToolsPage';
 import ReportsPage      from './components/reports/ReportsPage';
@@ -83,6 +84,9 @@ export default function App() {
 
           {/* WhatsApp Support Help — all roles */}
           <Route path="whatsapp-help" element={<WhatsappHelpPage />} />
+
+          {/* Event Invitation — all roles */}
+          <Route path="invitation" element={<InvitationPosterPage />} />
 
           {/* Ideas Bank — all roles */}
           <Route path="ideas" element={<IdeasPage />} />

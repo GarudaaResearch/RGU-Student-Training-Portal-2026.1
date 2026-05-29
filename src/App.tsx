@@ -25,6 +25,7 @@ import ProfilePage      from './components/shared/ProfilePage';
 import AgendaPage       from './components/agenda/AgendaPage';
 import TutorialAIPage       from './components/tutorial/TutorialAIPage';
 import AboutDeveloperPage   from './components/about/AboutDeveloperPage';
+import RealProblemsPage     from './components/problems/RealProblemsPage';
 
 // ── Route guard ──────────────────────────────────────────────
 function RequireAuth({ children }: { children: React.ReactNode }) {
@@ -103,6 +104,9 @@ export default function App() {
 
           {/* About Developer — all roles */}
           <Route path="about-developer" element={<AboutDeveloperPage />} />
+
+          {/* Real Problem Statements — all roles */}
+          <Route path="real-problems" element={<RealProblemsPage />} />
 
           {/* Reports — faculty + admin only */}
           <Route

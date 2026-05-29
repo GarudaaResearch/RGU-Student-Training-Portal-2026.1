@@ -9,7 +9,7 @@ import {
   LayoutDashboard, BookOpen, Calendar, Lightbulb, Wrench,
   BarChart3, FileText, LogOut, Sparkles, ChevronLeft,
   ChevronRight, GraduationCap, Shield, X, Trophy, Compass, BookMarked,
-  MessageCircle, MailOpen, UserCircle
+  MessageCircle, MailOpen, UserCircle, FileSearch2
 } from 'lucide-react';
 
 interface NavItem {
@@ -34,6 +34,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Certificates', path: '/certificates', icon: <FileText size={17} />,        roles: ['student'] },
   { label: 'WhatsApp Help - Join', path: '/whatsapp-help', icon: <MessageCircle size={17} />, roles: ['student','faculty','admin'] },
   { label: 'About Developer',  path: '/about-developer', icon: <UserCircle size={17} />,    roles: ['student','faculty','admin'] },
+  { label: 'RGU-Real Problems', path: '/real-problems',  icon: <FileSearch2 size={17} />,   roles: ['student','faculty','admin'] },
 ];
 
 interface SidebarProps {

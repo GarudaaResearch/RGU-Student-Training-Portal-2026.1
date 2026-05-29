@@ -20,6 +20,7 @@ const PAGE_TITLES: Record<string, string> = {
   '/whatsapp-help':     'WhatsApp Support Group',
   '/invitation':        'Event Invitation',
   '/about-developer':   'About the Developer',
+  '/real-problems':     'RGU – Real Problem Statements',
 };
 
 interface TopbarProps { onMenuClick: () => void; }

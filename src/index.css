@@ -13,60 +13,60 @@
   --font-display: 'Inter', 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'Cascadia Code', 'Consolas', 'Fira Mono', monospace;
 
-  /* ── Brand – Microsoft Fluent Blue (dark mode) ── */
-  --brand:        #479EF5;
-  --brand-dark:   #2899F5;
-  --brand-hover:  #5BADFF;
-  --brand-sub:    rgba(71, 158, 245, 0.10);
-  --brand-border: rgba(71, 158, 245, 0.25);
+  /* ── Brand – SBI Corporate Blue (Light Mode) ── */
+  --brand:        #0083C5;
+  --brand-dark:   #005486;
+  --brand-hover:  #0099df;
+  --brand-sub:    rgba(0, 131, 197, 0.08);
+  --brand-border: rgba(0, 131, 197, 0.18);
 
   /* ── Backgrounds ────────────────────────────── */
-  --bg-app:      #141414;
-  --bg-sidebar:  #1A1A1A;
-  --bg-topbar:   #1A1A1A;
-  --bg-card:     #1E1E1E;
-  --bg-card-2:   #242424;
-  --bg-input:    #1E1E1E;
-  --bg-hover:    rgba(255,255,255,0.055);
-  --bg-selected: rgba(71,158,245,0.12);
-  --bg-overlay:  rgba(0,0,0,0.65);
+  --bg-app:      #F4F6F9; /* Slate grey/blue modern light background */
+  --bg-sidebar:  #FFFFFF; /* Pure white clean sidebar */
+  --bg-topbar:   #FFFFFF; /* Pure white clean topbar */
+  --bg-card:     #FFFFFF; /* White card */
+  --bg-card-2:   #F8FAFC; /* Slate-50 cards */
+  --bg-input:    #FFFFFF; /* White inputs */
+  --bg-hover:    rgba(0, 0, 0, 0.035);
+  --bg-selected: rgba(0, 131, 197, 0.08);
+  --bg-overlay:  rgba(0, 0, 0, 0.40);
 
   /* ── Borders ────────────────────────────────── */
-  --border:       #2D2D2D;
-  --border-muted: #222222;
-  --border-strong:#383838;
-  --border-brand: rgba(71,158,245,0.30);
-  --border-focus: #479EF5;
+  --border:       #E2E8F0; /* Slate-200 */
+  --border-muted: #F1F5F9; /* Slate-100 */
+  --border-strong:#CBD5E1; /* Slate-300 */
+  --border-brand: rgba(0, 131, 197, 0.20);
+  --border-focus: #0083C5;
 
   /* ── Text ───────────────────────────────────── */
-  --text-primary:   #F2F2F2;
-  --text-secondary: #ADADAD;
-  --text-muted:     #616161;
-  --text-disabled:  #404040;
-  --text-brand:     #479EF5;
-  --text-inverse:   #141414;
+  --text-primary:   #1E293B; /* Deep Slate Gray (excellent contrast & readability) */
+  --text-secondary: #475569; /* Slate-600 */
+  --text-muted:     #64748B; /* Slate-500 */
+  --text-disabled:  #94A3B8; /* Slate-400 */
+  --text-brand:     #0083C5; /* SBI Blue brand text */
+  --text-inverse:   #FFFFFF; /* White text for buttons/badges on dark backgrounds */
 
   /* ── Status ─────────────────────────────────── */
-  --success:        #6CCB5F;
-  --success-bg:     rgba(108,203,95,0.12);
-  --success-border: rgba(108,203,95,0.25);
-  --warning:        #FFC83D;
-  --warning-bg:     rgba(255,200,61,0.12);
-  --warning-border: rgba(255,200,61,0.25);
-  --error:          #CF6679;
-  --error-bg:       rgba(207,102,121,0.12);
-  --error-border:   rgba(207,102,121,0.25);
+  --success:        #10B981; /* Emerald-500 */
+  --success-bg:     rgba(16, 185, 129, 0.08);
+  --success-border: rgba(16, 185, 129, 0.18);
+  --warning:        #F59E0B; /* Amber-500 */
+  --warning-bg:     rgba(245, 158, 11, 0.08);
+  --warning-border: rgba(245, 158, 11, 0.18);
+  --error:          #EF4444; /* Red-500 */
+  --error-bg:       rgba(239, 68, 68, 0.08);
+  --error-border:   rgba(239, 68, 68, 0.18);
 
   /* ── Accent palette ─────────────────────────── */
-  --purple:        #9E8CF7;
-  --purple-bg:     rgba(158,140,247,0.12);
-  --purple-border: rgba(158,140,247,0.25);
-  --teal:          #2DC5A2;
-  --teal-bg:       rgba(45,197,162,0.12);
-  --teal-border:   rgba(45,197,162,0.25);
-  --amber:         #FFC83D;
-  --amber-bg:      rgba(255,200,61,0.12);
-  --amber-border:  rgba(255,200,61,0.25);
+  --purple:        #8B5CF6; /* Violet-500 */
+  --purple-bg:     rgba(139, 92, 246, 0.08);
+  --purple-border: rgba(139, 92, 246, 0.18);
+  --teal:          #0D9488; /* Teal-600 */
+  --teal-bg:       rgba(13, 148, 136, 0.08);
+  --teal-border:   rgba(13, 148, 136, 0.18);
+  --amber:         #F59E0B; /* Amber-500 */
+  --amber-bg:      rgba(245, 158, 11, 0.08);
+  --amber-border:  rgba(245, 158, 11, 0.18);
 
   /* ── Layout ─────────────────────────────────── */
   --sidebar-width:     240px;
@@ -81,10 +81,10 @@
   --r-xl: 14px;
 
   /* ── Elevation ──────────────────────────────── */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.35);
-  --shadow-md: 0 4px 12px rgba(0,0,0,0.45);
-  --shadow-lg: 0 8px 28px rgba(0,0,0,0.55);
-  --shadow-xl: 0 16px 48px rgba(0,0,0,0.65);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  --shadow-xl: 0 16px 48px rgba(0,0,0,0.16);
 
   /* ── Transitions ────────────────────────────── */
   --t:      140ms ease;
@@ -123,8 +123,8 @@ body {
 /* ── Scrollbar ───────────────────────────────────── */
 ::-webkit-scrollbar        { width: 5px; height: 5px; }
 ::-webkit-scrollbar-track  { background: transparent; }
-::-webkit-scrollbar-thumb  { background: #333; border-radius: 99px; }
-::-webkit-scrollbar-thumb:hover { background: #444; }
+::-webkit-scrollbar-thumb  { background: #CBD5E1; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
 
 /* ── Typography ─────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {

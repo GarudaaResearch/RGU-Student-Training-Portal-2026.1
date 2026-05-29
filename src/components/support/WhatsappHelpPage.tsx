@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 
 export default function WhatsappHelpPage() {
-  const supportGroupUrl = "https://chat.whatsapp.com/mock-rgu-student-portal";
+  const supportGroupUrl = "https://chat.whatsapp.com/Bm64LlSAvFgE3SVJjDgZls";
 
   const benefits = [
     { 

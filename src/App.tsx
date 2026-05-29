@@ -23,7 +23,8 @@ import ReportsPage      from './components/reports/ReportsPage';
 import CertificatesPage from './components/reports/CertificatesPage';
 import ProfilePage      from './components/shared/ProfilePage';
 import AgendaPage       from './components/agenda/AgendaPage';
-import TutorialAIPage  from './components/tutorial/TutorialAIPage';
+import TutorialAIPage       from './components/tutorial/TutorialAIPage';
+import AboutDeveloperPage   from './components/about/AboutDeveloperPage';
 
 // ── Route guard ──────────────────────────────────────────────
 function RequireAuth({ children }: { children: React.ReactNode }) {
@@ -99,6 +100,9 @@ export default function App() {
 
           {/* Tutorial-AI — all roles */}
           <Route path="tutorial-ai" element={<TutorialAIPage />} />
+
+          {/* About Developer — all roles */}
+          <Route path="about-developer" element={<AboutDeveloperPage />} />
 
           {/* Reports — faculty + admin only */}
           <Route

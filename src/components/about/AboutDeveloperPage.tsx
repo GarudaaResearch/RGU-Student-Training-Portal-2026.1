@@ -69,15 +69,28 @@ export default function AboutDeveloperPage() {
         <div style={{ position: 'relative', zIndex: 1, display: 'flex', alignItems: 'center', gap: 24, flexWrap: 'wrap' }}>
           {/* Avatar */}
           <div style={{
-            width: 90, height: 90, borderRadius: '50%',
+            width: 90,
+            height: 90,
+            borderRadius: '50%',
             background: 'rgba(255,255,255,0.18)',
-            border: '3px solid rgba(255,255,255,0.4)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 32, fontWeight: 800, color: '#fff',
+            border: '3px solid rgba(255,255,255,0.45)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             flexShrink: 0,
-            backdropFilter: 'blur(8px)',
+            overflow: 'hidden',
+            boxShadow: '0 4px 14px rgba(0,0,0,0.18)',
           }}>
-            AR
+            <img
+              src="/prof-anjit-raja.png"
+              alt="Prof. R. Anjit Raja"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center 10%',
+              }}
+            />
           </div>
 
           <div>

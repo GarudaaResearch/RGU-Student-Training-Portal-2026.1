@@ -182,7 +182,7 @@ export default function ProfilePage() {
                     className="flex flex-col items-center gap-2 p-3 rounded-lg text-center border border-[var(--border-muted)] bg-[var(--bg-card-2)]">
                     <span className="text-3xl">{badge.icon}</span>
                     <div className="text-xs font-bold text-[var(--text-primary)]">{badge.name}</div>
-                    <div className="text-[10px] text-[var(--text-secondary)] opacity-85">{badge.earnedAt}</div>
+                    <div className="text-xs text-[var(--text-secondary)] opacity-85">{badge.earnedAt}</div>
                   </div>
                 ))}
               </div>

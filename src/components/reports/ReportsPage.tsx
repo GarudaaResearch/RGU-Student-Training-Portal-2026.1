@@ -111,7 +111,7 @@ export default function ReportsPage() {
               {stat.value}
             </div>
             <div className="text-xs font-semibold text-[var(--text-secondary)]">{stat.label}</div>
-            <div className="text-[10px] text-[var(--text-secondary)] mt-1 opacity-80">{stat.sub}</div>
+            <div className="text-xs text-[var(--text-secondary)] mt-1 opacity-80">{stat.sub}</div>
           </motion.div>
         ))}
       </div>
@@ -310,7 +310,7 @@ export default function ReportsPage() {
                 <tr key={m.id}>
                   <td>
                     <div className="font-semibold text-xs text-[var(--text-primary)]">{m.title}</div>
-                    <div className="text-[10px] mt-0.5 text-[var(--text-secondary)]">Year {m.yearLevel}</div>
+                    <div className="text-xs mt-0.5 text-[var(--text-secondary)]">Year {m.yearLevel}</div>
                   </td>
                   <td className="text-[var(--text-secondary)]">{m.totalLessons}</td>
                   <td className="text-[var(--text-secondary)]">{Math.round(m.totalDuration / 3600)}h</td>

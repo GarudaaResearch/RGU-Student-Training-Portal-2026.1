@@ -58,10 +58,10 @@ export default function AgendaPage() {
         
         <div className="flex-1 flex flex-col gap-2 relative z-10">
           <div className="flex items-center gap-2">
-            <span className="badge font-bold text-[10px] px-2 py-0.5 rounded border-white/20 bg-white/15 text-white uppercase tracking-wider">
+            <span className="badge font-bold text-xs px-2 py-0.5 rounded border-white/20 bg-white/15 text-white uppercase tracking-wider">
               AI Tiruvizha 2026
             </span>
-            <span className="badge font-bold text-[10px] px-2 py-0.5 rounded border-white/20 bg-white/15 text-white uppercase tracking-wider">
+            <span className="badge font-bold text-xs px-2 py-0.5 rounded border-white/20 bg-white/15 text-white uppercase tracking-wider">
               AI Emerging Program
             </span>
           </div>
@@ -112,9 +112,9 @@ export default function AgendaPage() {
               {stat.icon}
             </div>
             <div className="min-w-0">
-              <div className="text-[10px] uppercase font-bold tracking-wider text-[var(--text-muted)]">{stat.label}</div>
+              <div className="text-xs uppercase font-bold tracking-wider text-[var(--text-muted)]">{stat.label}</div>
               <div className="text-xs font-bold text-[var(--text-primary)] mt-1.5 truncate">{stat.val}</div>
-              <div className="text-[10px] text-[var(--text-secondary)] mt-0.5">{stat.desc}</div>
+              <div className="text-xs text-[var(--text-secondary)] mt-0.5">{stat.desc}</div>
             </div>
           </motion.div>
         ))}
@@ -170,7 +170,7 @@ export default function AgendaPage() {
 
                     {/* Time Slot badge */}
                     <div className="w-full sm:w-44 flex-shrink-0">
-                      <span className="inline-flex items-center gap-1.5 text-[10px] font-mono font-bold text-[var(--brand)] bg-[var(--brand-sub)] px-2.5 py-1 rounded border border-[var(--brand-border)]">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-[var(--brand)] bg-[var(--brand-sub)] px-2.5 py-1 rounded border border-[var(--brand-border)]">
                         <Clock size={10} /> {item.time}
                       </span>
                     </div>
@@ -187,7 +187,7 @@ export default function AgendaPage() {
                         {item.subtitle}
                       </div>
                       {item.details && (
-                        <p className="text-[10px] text-[var(--text-muted)] leading-relaxed mt-1.5 p-2.5 rounded bg-[var(--bg-card-2)] border border-[var(--border-muted)]">
+                        <p className="text-xs text-[var(--text-muted)] leading-relaxed mt-1.5 p-2.5 rounded bg-[var(--bg-card-2)] border border-[var(--border-muted)] text-justify">
                           {item.details}
                         </p>
                       )}
@@ -218,7 +218,7 @@ export default function AgendaPage() {
                 <div key={i} className="p-3 rounded-lg bg-[var(--bg-card-2)] border border-[var(--border-muted)] flex flex-col gap-2 hover:border-[var(--brand-border)] transition-colors">
                   <div className="text-lg leading-none">{gain.icon}</div>
                   <div>
-                    <div className="text-[10px] font-bold text-[var(--text-primary)] leading-tight">{gain.title}</div>
+                    <div className="text-xs font-bold text-[var(--text-primary)] leading-tight">{gain.title}</div>
                     <p className="text-[9px] text-[var(--text-secondary)] mt-1 leading-snug">{gain.desc}</p>
                   </div>
                 </div>
@@ -259,7 +259,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <Laptop size={14} className="text-[var(--brand)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">Student Requirements</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">Student Requirements</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         Laptop with 8GB RAM, Chrome/Edge browser installed. Gmail account login required.
                       </p>
@@ -269,7 +269,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <Wifi size={14} className="text-[var(--brand)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">Internet Backbone</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">Internet Backbone</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         High-speed WiFi (1-2 Mbps dedicated per student). 1 Gbps fiber trunk is active.
                       </p>
@@ -279,7 +279,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <MapPin size={14} className="text-[var(--brand)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">Laboratory Layout</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">Laboratory Layout</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         15 dedicated training halls fully set up, each equipped with presentation systems and power backup.
                       </p>
@@ -297,7 +297,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <Users size={14} className="text-[var(--purple)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">15 Active Batches</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">15 Active Batches</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         Staging ~700 students. Staggered into 15 batches (45-50 students per batch) for focus.
                       </p>
@@ -307,7 +307,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <UserCheck size={14} className="text-[var(--purple)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">Dedicated Mentors</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">Dedicated Mentors</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         1 faculty trainer assigned per batch, ensuring complete individual guidance.
                       </p>
@@ -317,7 +317,7 @@ export default function AgendaPage() {
                   <div className="flex items-start gap-2.5">
                     <CheckCircle2 size={14} className="text-[var(--purple)] mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-[10px] font-bold text-[var(--text-primary)]">Credential Sync</div>
+                      <div className="text-xs font-bold text-[var(--text-primary)]">Credential Sync</div>
                       <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">
                         Pre-created student profiles loaded into the portal for instant, lag-free authentication.
                       </p>
@@ -331,7 +331,7 @@ export default function AgendaPage() {
 
             {/* Risk management status panel */}
             <div className="p-3.5 rounded bg-[var(--bg-card-2)] border border-[var(--border-muted)] flex flex-col gap-2.5">
-              <div className="flex items-center gap-1.5 text-[10px] font-bold text-[var(--text-primary)] uppercase">
+              <div className="flex items-center gap-1.5 text-xs font-bold text-[var(--text-primary)] uppercase">
                 <ShieldAlert size={12} className="text-yellow-500" /> Risk Management
               </div>
               <div className="grid grid-cols-1 gap-1.5">
@@ -356,11 +356,11 @@ export default function AgendaPage() {
       {/* Footer Support Banner */}
       <div className="card p-5 md:p-6 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl flex flex-col sm:flex-row items-center justify-between gap-4 flex-wrap">
         <div className="text-center sm:text-left">
-          <div className="text-[10px] font-bold text-[var(--text-primary)]">Centre for Innovation and Incubation Support</div>
+          <div className="text-xs font-bold text-[var(--text-primary)]">Centre for Innovation and Incubation Support</div>
           <p className="text-[9px] text-[var(--text-secondary)] mt-0.5 leading-relaxed">Empowering Young Minds | Innovating Tomorrow</p>
         </div>
 
-        <div className="flex items-center gap-3.5 flex-wrap justify-center text-[10px]">
+        <div className="flex items-center gap-3.5 flex-wrap justify-center text-xs">
           <span className="text-[var(--text-secondary)] font-semibold">
             📧 <a href="mailto:rcasinnovationstartupcell@rathinam.in" className="hover:text-[var(--brand)] underline decoration-dotted">rcasinnovationstartupcell@rathinam.in</a>
           </span>

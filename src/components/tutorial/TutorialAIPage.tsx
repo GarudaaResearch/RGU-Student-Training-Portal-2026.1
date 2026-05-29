@@ -85,7 +85,7 @@ function InfoBox({ type = 'tip', children }: { type?: 'tip' | 'warning' | 'note'
   }[type];
   return (
     <div className="rounded-lg p-4 my-3 border" style={{ background: styles.bg, borderColor: styles.border }}>
-      <div className="text-[10px] font-bold uppercase tracking-widest mb-1.5" style={{ color: styles.color }}>
+      <div className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: styles.color }}>
         {styles.icon} {styles.label}
       </div>
       <div className="text-xs text-[var(--text-primary)] leading-relaxed">{children}</div>
@@ -163,8 +163,8 @@ export default function TutorialAIPage() {
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full bg-white/10 blur-3xl -translate-y-1/3 translate-x-1/4 pointer-events-none" />
         <div className="relative z-10 flex flex-col gap-2">
           <div className="flex items-center gap-2 flex-wrap">
-            <span className="badge text-[10px] px-2 py-0.5 border-white/20 bg-white/15 text-white font-bold">AI Tiruvizha 2026</span>
-            <span className="badge text-[10px] px-2 py-0.5 border-white/20 bg-white/15 text-white font-bold">Tutorial Guide</span>
+            <span className="badge text-xs px-2 py-0.5 border-white/20 bg-white/15 text-white font-bold">AI Tiruvizha 2026</span>
+            <span className="badge text-xs px-2 py-0.5 border-white/20 bg-white/15 text-white font-bold">Tutorial Guide</span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white tracking-tight" style={{ margin: 0 }}>
             Prompt Engineering — Zero to Advanced
@@ -216,7 +216,7 @@ export default function TutorialAIPage() {
                   <div className={`text-[9px] font-bold uppercase tracking-wider ${activeSection === sec.id ? 'text-[var(--brand)]' : 'text-[var(--text-muted)]'}`}>
                     {sec.label}
                   </div>
-                  <div className={`text-[10px] font-semibold leading-tight mt-0.5 ${activeSection === sec.id ? 'text-[var(--brand)]' : 'text-[var(--text-secondary)]'}`}>
+                  <div className={`text-xs font-semibold leading-tight mt-0.5 ${activeSection === sec.id ? 'text-[var(--brand)]' : 'text-[var(--text-secondary)]'}`}>
                     {sec.title}
                   </div>
                 </div>
@@ -236,7 +236,7 @@ export default function TutorialAIPage() {
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--brand)' }}><BookOpen size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 1</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 1</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Introduction to AI & Prompt Engineering</h3>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export default function TutorialAIPage() {
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--success)' }}><GraduationCap size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 2</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 2</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Beginner Level — Getting Comfortable with AI</h3>
                     </div>
                   </div>
@@ -359,7 +359,7 @@ Highlight any technical terms and explain them in brackets.
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--purple)' }}><FileText size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 3</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 3</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Intermediate — Prompts for Real Academic Work</h3>
                     </div>
                   </div>
@@ -464,7 +464,7 @@ Rewrite it as:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--teal)' }}><Globe size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 4</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 4</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Building Digital Products with AI Prompts</h3>
                     </div>
                   </div>
@@ -547,7 +547,7 @@ Include pubspec.yaml with dependencies.`}</PromptBox>
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--amber)' }}><Zap size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 5</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 5</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Advanced Prompt Engineering Techniques</h3>
                     </div>
                   </div>
@@ -641,7 +641,7 @@ Rules you MUST follow:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--brand)' }}><Cpu size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 6</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 6</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Domain-Specific AI Prompts for Students</h3>
                     </div>
                   </div>
@@ -721,7 +721,7 @@ After I answer each question, give me:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--error)' }}><Shield size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 7</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 7</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Responsible AI Use & Academic Integrity</h3>
                     </div>
                   </div>
@@ -776,7 +776,7 @@ Before I use this:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--purple)' }}><Zap size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 8</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 8</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>30 Power Prompts — Quick Reference</h3>
                     </div>
                   </div>
@@ -833,7 +833,7 @@ Before I use this:
                       <div className="flex flex-col gap-2">
                         {group.prompts.map((p, i) => (
                           <div key={i} className="flex items-start gap-2.5">
-                            <span className="text-[10px] font-bold text-white px-1.5 py-0.5 rounded flex-shrink-0 mt-0.5" style={{ background: group.color }}>{i + 1}</span>
+                            <span className="text-xs font-bold text-white px-1.5 py-0.5 rounded flex-shrink-0 mt-0.5" style={{ background: group.color }}>{i + 1}</span>
                             <span className="text-xs text-[var(--text-secondary)] leading-relaxed font-mono">{p}</span>
                           </div>
                         ))}
@@ -849,7 +849,7 @@ Before I use this:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--teal)' }}><Users size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 9</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 9</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Hands-On Workshop Activities</h3>
                     </div>
                   </div>
@@ -896,7 +896,7 @@ Before I use this:
                   <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)]">
                     <div className="p-2 rounded-lg text-white" style={{ background: 'var(--success)' }}><BarChart3 size={16} /></div>
                     <div>
-                      <div className="text-[10px] text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 10</div>
+                      <div className="text-xs text-[var(--text-muted)] uppercase font-bold tracking-wider">Section 10</div>
                       <h3 className="text-base font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>Resources, Tools & Next Steps</h3>
                     </div>
                   </div>
@@ -959,7 +959,7 @@ Before I use this:
                     <p className="text-xs font-bold italic text-yellow-300 mt-1">
                       "The prompt is the new programming language." — RGU AI Tiruvizha 2026 Team
                     </p>
-                    <div className="mt-3 text-[10px] text-white/70">
+                    <div className="mt-3 text-xs text-white/70">
                       AI Tiruvizha 2026 | RGU Innovation & Incubation | Student Training Portal
                     </div>
                   </div>
@@ -981,7 +981,7 @@ Before I use this:
             >
               ← Previous
             </button>
-            <span className="text-[10px] text-[var(--text-muted)]">
+            <span className="text-xs text-[var(--text-muted)]">
               Section {SECTIONS.findIndex(s => s.id === activeSection) + 1} of {SECTIONS.length}
             </span>
             <button

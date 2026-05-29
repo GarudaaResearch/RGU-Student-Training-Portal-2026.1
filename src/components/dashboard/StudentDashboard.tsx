@@ -203,7 +203,7 @@ export default function StudentDashboard() {
                     <div>
                       <div className="text-xs font-semibold leading-snug text-[var(--text-primary)]">{a.title}</div>
                       <div className="text-xs mt-1 leading-relaxed text-[var(--text-secondary)]">{a.content.substring(0, 80)}…</div>
-                      <div className="text-[10px] mt-1 text-[var(--text-muted)]">
+                      <div className="text-xs mt-1 text-[var(--text-muted)]">
                         {format(parseISO(a.createdAt), 'dd MMM, hh:mm a')}
                       </div>
                     </div>
@@ -222,7 +222,7 @@ export default function StudentDashboard() {
               {upcomingSessions.map(ses => (
                 <div key={ses.id} className="p-3 rounded-lg border border-[var(--border-muted)] bg-[var(--bg-card-2)]">
                   <div className="text-xs font-semibold leading-snug mb-1 text-[var(--text-primary)]">{ses.title}</div>
-                  <div className="flex items-center gap-2 text-[10px] text-[var(--text-secondary)]">
+                  <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
                     <span>{format(parseISO(ses.scheduledAt), 'dd MMM, hh:mm a')}</span>
                     <span>·</span>
                     <span>{ses.durationMin} min</span>
@@ -251,7 +251,7 @@ export default function StudentDashboard() {
                 <div key={b.id} className="flex flex-col items-center gap-1 p-3 rounded-lg text-center border border-[var(--border-muted)] bg-[var(--bg-card-2)]">
                   <span className="text-2xl">{b.icon}</span>
                   <span className="text-xs font-semibold text-[var(--text-primary)]">{b.name}</span>
-                  <span className="text-[10px] text-[var(--text-secondary)] opacity-80">{b.earnedAt}</span>
+                  <span className="text-xs text-[var(--text-secondary)] opacity-80">{b.earnedAt}</span>
                 </div>
               ))}
             </div>
@@ -274,7 +274,7 @@ export default function StudentDashboard() {
                     <div className="text-xs font-semibold truncate text-[var(--text-primary)]">
                       {entry.name} {entry.isCurrentUser && '(You)'}
                     </div>
-                    <div className="text-[10px] text-[var(--text-secondary)] opacity-80">{entry.degree}</div>
+                    <div className="text-xs text-[var(--text-secondary)] opacity-80">{entry.degree}</div>
                   </div>
                   <div className="text-xs font-bold flex-shrink-0 text-[var(--amber)]">
                     {entry.points.toLocaleString()}

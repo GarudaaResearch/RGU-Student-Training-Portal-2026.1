@@ -173,7 +173,7 @@ export default function SessionDetailsPage() {
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-[10px] uppercase font-bold tracking-wider text-[var(--text-muted)]">{item.label}</div>
+                    <div className="text-xs uppercase font-bold tracking-wider text-[var(--text-muted)]">{item.label}</div>
                     <div className="text-xs font-bold text-[var(--text-primary)] mt-1">{item.val}</div>
                   </div>
                 </div>
@@ -213,10 +213,10 @@ export default function SessionDetailsPage() {
                     <FileText size={16} className="text-[var(--brand)]" />
                     <div>
                       <div className="text-xs font-bold text-[var(--text-primary)]">{res.name}</div>
-                      <div className="text-[10px] text-[var(--text-muted)] mt-0.5">{res.type} · {res.size}</div>
+                      <div className="text-xs text-[var(--text-muted)] mt-0.5">{res.type} · {res.size}</div>
                     </div>
                   </div>
-                  <button className="btn btn-ghost btn-sm text-[10px] flex items-center gap-1" style={{ padding: '4px 10px' }}>
+                  <button className="btn btn-ghost btn-sm text-xs flex items-center gap-1" style={{ padding: '4px 10px' }}>
                     <ExternalLink size={10} /> Access
                   </button>
                 </div>
@@ -255,7 +255,7 @@ export default function SessionDetailsPage() {
                 <div className="progress-bar w-full" style={{ height: 6 }}>
                   <div className="progress-fill" style={{ width: `${enrollment}%` }} />
                 </div>
-                <span className="text-[10px] text-[var(--text-muted)] text-center mt-1 leading-relaxed">
+                <span className="text-xs text-[var(--text-muted)] text-center mt-1 leading-relaxed">
                   Only registered students are eligible for attending this lab session.
                 </span>
               </div>
@@ -290,7 +290,7 @@ export default function SessionDetailsPage() {
               
               <div className="flex items-center gap-2 p-3.5 rounded bg-[var(--brand-sub)] border border-[var(--brand-border)] text-[var(--brand)] mt-2">
                 <UserCheck size={14} className="flex-shrink-0 mt-0.5" />
-                <div className="text-[10px] font-semibold leading-relaxed">
+                <div className="text-xs font-semibold leading-relaxed">
                   Verified Trainer Attendance Badge will be instantly issued inside <strong>My Certificates</strong> upon completing this lab.
                 </div>
               </div>
@@ -299,12 +299,12 @@ export default function SessionDetailsPage() {
 
           {/* Incubation Details banner */}
           <div className="card p-5 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl flex flex-col gap-3">
-            <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider">CII Incubation Network</div>
+            <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">CII Incubation Network</div>
             <div className="text-xs font-bold text-[var(--text-primary)]">Need Technical Support?</div>
-            <p className="text-[10px] text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
               If you experience any issues joining the session, synchronizing your portal token, or launching required AI playgrounds, contact startup support.
             </p>
-            <div className="text-[10px] font-semibold text-[var(--text-brand)] mt-1.5 flex flex-col gap-1">
+            <div className="text-xs font-semibold text-[var(--text-brand)] mt-1.5 flex flex-col gap-1">
               <span>📧 rcasinnovationstartupcell@rathinam.in</span>
               <span>📞 +91 7299408979</span>
             </div>

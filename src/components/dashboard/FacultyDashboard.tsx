@@ -171,7 +171,7 @@ export default function FacultyDashboard() {
                     <tr key={mod.id}>
                       <td>
                         <div className="font-semibold text-[var(--text-primary)] text-xs">{mod.title.split(':')[0]}</div>
-                        <div className="text-[10px] text-[var(--text-secondary)] mt-0.5">{mod.tags.slice(0,2).join(' · ')}</div>
+                        <div className="text-xs text-[var(--text-secondary)] mt-0.5">{mod.tags.slice(0,2).join(' · ')}</div>
                       </td>
                       <td className="text-[var(--text-secondary)]">{mod.totalLessons}</td>
                       <td>
@@ -209,12 +209,12 @@ export default function FacultyDashboard() {
               {upcomingSessions.map(ses => (
                 <div key={ses.id} className="p-3 rounded-lg border border-[var(--border-muted)] bg-[var(--bg-card-2)]">
                   <div className="text-xs font-semibold mb-1 text-[var(--text-primary)]">{ses.title}</div>
-                  <div className="text-[10px] mb-2 text-[var(--text-secondary)]">
+                  <div className="text-xs mb-2 text-[var(--text-secondary)]">
                     {format(parseISO(ses.scheduledAt), 'dd MMM · hh:mm a')} · {ses.durationMin}m
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="badge badge-cyan" style={{ fontSize: 9 }}>{ses.type}</span>
-                    <span className="text-[10px] text-[var(--text-secondary)]">
+                    <span className="text-xs text-[var(--text-secondary)]">
                       {ses.enrolledCount}/{ses.maxParticipants || '∞'} enrolled
                     </span>
                   </div>
@@ -243,7 +243,7 @@ export default function FacultyDashboard() {
                   </span>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs font-semibold truncate text-[var(--text-primary)]">{entry.name}</div>
-                    <div className="text-[10px] text-[var(--text-secondary)] opacity-80">{entry.degree}</div>
+                    <div className="text-xs text-[var(--text-secondary)] opacity-80">{entry.degree}</div>
                   </div>
                   <div className="text-xs font-bold flex-shrink-0 text-[var(--amber)]">
                     {entry.points.toLocaleString()}

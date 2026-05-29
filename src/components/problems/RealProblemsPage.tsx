@@ -2,7 +2,7 @@
 // RealProblemsPage — RGU Real Problem Statements
 // Fluent Design / Microsoft Learn aesthetic
 // ============================================================
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Search, Filter, ChevronDown, ChevronUp,
@@ -150,6 +150,7 @@ function ProblemCard({ p, index }: { p: Problem; index: number }) {
                 fontSize: 12.5,
                 color: 'var(--text-secondary)',
                 lineHeight: 1.7,
+                textAlign: 'justify',
               }}>
                 {p.description}
               </p>
@@ -174,6 +175,11 @@ export default function RealProblemsPage() {
   const [activeBucket, setActiveBucket] = useState('All');
   const [activeType, setActiveType]     = useState('All');
   const [showFilters, setShowFilters]   = useState(false);
+  const [visibleCount, setVisibleCount] = useState(20);
+
+  useEffect(() => {
+    setVisibleCount(20);
+  }, [query, activeBucket, activeType]);
 
   const bucketCounts = useMemo(() => {
     const map: Record<string, number> = { All: problems.length };
@@ -193,6 +199,10 @@ export default function RealProblemsPage() {
       return matchQ && matchBucket && matchType;
     });
   }, [problems, query, activeBucket, activeType]);
+
+  const visibleProblems = useMemo(() => {
+    return filtered.slice(0, visibleCount);
+  }, [filtered, visibleCount]);
 
   return (
     <div className="page-content" style={{ maxWidth: 900, margin: '0 auto' }}>
@@ -378,9 +388,21 @@ export default function RealProblemsPage() {
             No problems match your search. Try different keywords or clear filters.
           </div>
         ) : (
-          filtered.map((p, i) => <ProblemCard key={p.id} p={p} index={i} />)
+          visibleProblems.map((p, i) => <ProblemCard key={p.id} p={p} index={i} />)
         )}
       </div>
+
+      {filtered.length > visibleCount && (
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: 22, marginBottom: 12 }}>
+          <button
+            className="btn btn-secondary"
+            style={{ fontSize: 12, padding: '8px 20px', display: 'flex', alignItems: 'center', gap: 6 }}
+            onClick={() => setVisibleCount(prev => prev + 20)}
+          >
+            Load More Problems ({filtered.length - visibleCount} remaining)
+          </button>
+        </div>
+      )}
 
     </div>
   );

@@ -127,13 +127,13 @@ export default function AboutDeveloperPage() {
           <h2 style={{ margin: '0 0 16px', fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>
             Biography
           </h2>
-          <p style={{ margin: '0 0 14px', fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75 }}>
+          <p style={{ margin: '0 0 14px', fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75, textAlign: 'justify' }}>
             Prof. R. Anjit Raja is a dynamic academician and innovation leader, serving as the driving force
             behind <strong style={{ color: 'var(--text-primary)' }}>The Centre for Innovation and Incubation</strong>.
             With a strong vision to empower young minds and foster a culture of creativity, he has been
             instrumental in designing and executing large-scale technology-driven learning initiatives.
           </p>
-          <p style={{ margin: '0 0 14px', fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75 }}>
+          <p style={{ margin: '0 0 14px', fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75, textAlign: 'justify' }}>
             With extensive experience in emerging technologies such as{' '}
             <strong style={{ color: 'var(--brand)' }}>Artificial Intelligence</strong>,{' '}
             <strong style={{ color: 'var(--teal)' }}>Internet of Things (IoT)</strong>, and{' '}
@@ -142,7 +142,7 @@ export default function AboutDeveloperPage() {
             His leadership has enabled the successful execution of impactful programs, including hands-on
             training sessions, innovation challenges, and student-centric development platforms.
           </p>
-          <p style={{ margin: 0, fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75 }}>
+          <p style={{ margin: 0, fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75, textAlign: 'justify' }}>
             He is widely recognized for his ability to inspire students to think beyond conventional
             boundaries, encouraging them to build practical solutions that address contemporary challenges.
             Through his innovative pedagogy and mentoring style, he continues to shape the next generation of
@@ -223,7 +223,7 @@ export default function AboutDeveloperPage() {
         <h2 style={{ margin: '0 0 16px', fontSize: 15, fontWeight: 700, color: 'var(--text-primary)' }}>
           This Initiative
         </h2>
-        <p style={{ margin: 0, fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75 }}>
+        <p style={{ margin: 0, fontSize: 13.5, color: 'var(--text-secondary)', lineHeight: 1.75, textAlign: 'justify' }}>
           The <strong style={{ color: 'var(--text-primary)' }}>CII AI Training Hub</strong> — this very portal —
           is a direct product of Prof. Anjit Raja's vision to democratize AI education within RGU. Built to
           equip students with hands-on experience in Artificial Intelligence and emerging technologies, it

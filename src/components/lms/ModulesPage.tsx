@@ -2,6 +2,7 @@
 // Learning Modules Page — Microsoft Learn / Fluent Design
 // ============================================================
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MOCK_MODULES } from '../../data/mockData';
 import { MOCK_LESSONS_BY_MODULE, type DetailedLesson } from '../../data/mockLessons';
@@ -25,6 +26,7 @@ const TAG_COLORS: Record<string, string> = {
 const MODULE_EMOJIS = ['🤖', '✨', '💻', '🐍', '🔧', '🌐', '📊', '🔬'];
 
 export default function ModulesPage() {
+  const location = useLocation();
   const [search, setSearch] = useState('');
   const [filter, setFilter] = useState<'all' | 'inprogress' | 'completed'>('all');
   
@@ -44,6 +46,14 @@ export default function ModulesPage() {
   const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
   const [assignmentSubmitted, setAssignmentSubmitted] = useState(false);
   const [assignmentGrade, setAssignmentGrade] = useState<{ grade: string; feedback: string } | null>(null);
+
+  // Listen for navigation state from search selection
+  useEffect(() => {
+    if (location.state && (location.state as any).moduleId) {
+      setSelectedModuleId((location.state as any).moduleId);
+      setActiveLessonId(null);
+    }
+  }, [location.state]);
 
   // Sync lessons when module changes
   useEffect(() => {
@@ -168,7 +178,7 @@ export default function ModulesPage() {
                     <span className="badge badge-indigo text-[9px] px-1 py-0 uppercase">
                       {les.contentType}
                     </span>
-                    <span className="text-[10px] text-[var(--text-secondary)] flex items-center gap-0.5">
+                    <span className="text-xs text-[var(--text-secondary)] flex items-center gap-0.5">
                       <Clock size={9}/> {Math.floor(les.durationSec / 60)}m
                     </span>
                   </div>
@@ -241,12 +251,12 @@ export default function ModulesPage() {
               {/* Custom styled mock media overlay player */}
               <div className="p-4 bg-[var(--bg-card-2)] border-t border-[var(--border)] flex flex-col gap-3 relative z-10">
                 <div className="flex items-center gap-3">
-                  <div className="text-[10px] font-mono text-[var(--brand)]">0:00</div>
+                  <div className="text-xs font-mono text-[var(--brand)]">0:00</div>
                   <div className="flex-1 h-1 bg-[var(--border-strong)] rounded relative cursor-pointer">
                     <div className="absolute top-0 left-0 w-[30%] h-full bg-[var(--brand)] rounded" />
                     <div className="absolute top-1/2 -translate-y-1/2 left-[30%] w-3 h-3 rounded-full bg-white shadow" />
                   </div>
-                  <div className="text-[10px] font-mono text-[var(--text-secondary)]">{lesson.videoDurationText || '10:00'}</div>
+                  <div className="text-xs font-mono text-[var(--text-secondary)]">{lesson.videoDurationText || '10:00'}</div>
                 </div>
                 <div className="flex items-center justify-between text-[var(--text-secondary)]">
                   <div className="flex items-center gap-4">
@@ -384,7 +394,7 @@ export default function ModulesPage() {
               {/* Simulated code editor */}
               <div className="flex-1 flex flex-col bg-[#1A1A1A] border-r border-[var(--border)] overflow-hidden">
                 <div className="px-4 py-2 border-b border-[var(--border-muted)] bg-[#121212] flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-[var(--text-secondary)] uppercase">
+                  <span className="text-xs font-mono text-[var(--text-secondary)] uppercase">
                     main.{lesson.codeLanguage || 'py'} (Python Sandbox)
                   </span>
                   <div className="flex items-center gap-1.5">
@@ -399,7 +409,7 @@ export default function ModulesPage() {
                 </div>
 
                 <div className="p-4 border-t border-[var(--border-muted)] bg-[#121212] flex items-center justify-between">
-                  <span className="text-[10px] text-[var(--text-muted)] font-mono">Python v3.11 Interpreter</span>
+                  <span className="text-xs text-[var(--text-muted)] font-mono">Python v3.11 Interpreter</span>
                   <button
                     onClick={() => {
                       setCodeRunning(true);
@@ -418,7 +428,7 @@ export default function ModulesPage() {
 
               {/* Simulated Console Output */}
               <div className="w-full md:w-64 bg-[#0F0F0F] flex flex-col overflow-hidden">
-                <div className="px-4 py-2 border-b border-[var(--border-muted)] bg-[#121212] text-[10px] font-mono text-[var(--text-secondary)] uppercase tracking-wider">
+                <div className="px-4 py-2 border-b border-[var(--border-muted)] bg-[#121212] text-xs font-mono text-[var(--text-secondary)] uppercase tracking-wider">
                   Terminal Console
                 </div>
                 <div className="flex-1 p-4 font-mono text-xs text-green-400 bg-black leading-normal select-text overflow-y-auto">
@@ -432,7 +442,7 @@ export default function ModulesPage() {
                       <div className="text-[var(--text-muted)] font-mono">[Process started]</div>
                       <pre className="whitespace-pre-wrap">{lesson.codeOutput}</pre>
                       <div className="text-[var(--text-muted)] mt-2 font-mono">[Process completed successfully]</div>
-                      <div className="text-[var(--success)] font-bold text-[10px] mt-1">✓ Lesson unlocked & complete!</div>
+                      <div className="text-[var(--success)] font-bold text-xs mt-1">✓ Lesson unlocked & complete!</div>
                     </div>
                   ) : (
                     <div className="text-[var(--text-muted)]">Click "Run Python Script" to execute code.</div>
@@ -473,7 +483,7 @@ export default function ModulesPage() {
                           "Click to browse / Upload PDF or Document"
                         )}
                       </div>
-                      <p className="text-[10px] text-[var(--text-muted)] mt-1">Maximum file size: 5MB</p>
+                      <p className="text-xs text-[var(--text-muted)] mt-1">Maximum file size: 5MB</p>
                     </div>
                   </div>
 
@@ -523,7 +533,7 @@ export default function ModulesPage() {
                     
                     {assignmentGrade ? (
                       <div className="flex flex-col gap-2">
-                        <div className="text-[10px] text-[var(--text-muted)] font-mono">Assessed by: Prof. R. Anjit Raja</div>
+                        <div className="text-xs text-[var(--text-muted)] font-mono">Assessed by: Prof. R. Anjit Raja</div>
                         <p className="text-xs text-[var(--text-secondary)] leading-relaxed">
                           {assignmentGrade.feedback}
                         </p>
@@ -567,7 +577,7 @@ export default function ModulesPage() {
                 <h2 className="text-xl font-bold text-[var(--text-primary)]" style={{ margin: 0 }}>
                   {mod.title}
                 </h2>
-                <span className="badge badge-indigo text-[10px]">Year {mod.yearLevel}</span>
+                <span className="badge badge-indigo text-xs">Year {mod.yearLevel}</span>
               </div>
               <p className="text-xs text-[var(--text-secondary)] mt-1.5">
                 {moduleLessons.length} lessons outline · Total duration: {formatDuration(mod.totalDuration)}
@@ -610,7 +620,7 @@ export default function ModulesPage() {
                   <div className="progress-bar mb-2">
                     <div className="progress-fill" style={{ width: `${completion}%` }} />
                   </div>
-                  <p className="text-[10px] text-[var(--text-muted)] leading-relaxed">
+                  <p className="text-xs text-[var(--text-muted)] leading-relaxed">
                     Unlocking a module certificate requires complete completion of all lessons, quizzes, and final assignments.
                   </p>
                 </div>
@@ -640,7 +650,7 @@ export default function ModulesPage() {
                             <Check size={10} strokeWidth={3} />
                           </div>
                         ) : (
-                          <div className="w-4.5 h-4.5 rounded-full border border-[var(--text-muted)] flex items-center justify-center text-[10px] font-semibold text-[var(--text-secondary)]">
+                          <div className="w-4.5 h-4.5 rounded-full border border-[var(--text-muted)] flex items-center justify-center text-xs font-semibold text-[var(--text-secondary)]">
                             {index + 1}
                           </div>
                         )}
@@ -801,7 +811,7 @@ export default function ModulesPage() {
 
                     {/* Footer */}
                     <div className="px-5 py-3 flex items-center justify-between">
-                      <div className="flex items-center gap-3 text-[10px] text-[var(--text-secondary)]">
+                      <div className="flex items-center gap-3 text-xs text-[var(--text-secondary)]">
                         <span className="flex items-center gap-1"><BookOpen size={11}/> {mod.totalLessons} lessons</span>
                         <span className="flex items-center gap-1"><Clock size={11}/> {formatDuration(mod.totalDuration)}</span>
                       </div>

@@ -70,7 +70,7 @@ export default function InvitationPosterPage() {
               <a 
                 href={invitationImageUrl} 
                 download="AI_Tiruvizha_2026_Invitation.png"
-                className="btn btn-secondary btn-sm text-[10px] flex items-center gap-1.5"
+                className="btn btn-secondary btn-sm text-xs flex items-center gap-1.5"
                 style={{ padding: '4px 10px' }}
               >
                 <Download size={11} /> Download Poster
@@ -87,7 +87,7 @@ export default function InvitationPosterPage() {
               />
             </div>
             
-            <div className="flex items-center gap-2 mt-4 text-[10px] text-[var(--text-muted)] font-semibold leading-relaxed">
+            <div className="flex items-center gap-2 mt-4 text-xs text-[var(--text-muted)] font-semibold leading-relaxed">
               <Info size={12} className="text-[var(--brand)] flex-shrink-0" />
               Hover or click "Download Poster" to save the high-resolution invitation poster.
             </div>
@@ -145,7 +145,7 @@ export default function InvitationPosterPage() {
                     <span className="w-1.5 h-1.5 rounded-full bg-[var(--brand)] animate-pulse"></span>
                     {item.title}
                   </div>
-                  <p className="text-[10px] text-[var(--text-secondary)] leading-relaxed pl-3">
+                  <p className="text-xs text-[var(--text-secondary)] leading-relaxed pl-3 text-justify">
                     {item.desc}
                   </p>
                 </div>
@@ -178,16 +178,16 @@ export default function InvitationPosterPage() {
 
           {/* Incubation Cell Support contacts */}
           <div className="card p-5 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl flex flex-col gap-3">
-            <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider">
+            <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">
               Centre for Innovation and Incubation Cell
             </div>
-            <div className="text-xs font-bold text-[var(--text-primary)]">
+            <div className="text-sm font-bold text-[var(--text-primary)]">
               Contact Event Support Cell
             </div>
-            <p className="text-[10px] text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed text-justify">
               For any logistical queries, physical hall mappings, or Wi-Fi login issues during the function, contact startup cell coordinators.
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-1.5 text-[10px] font-semibold text-[var(--text-secondary)]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-1.5 text-xs font-semibold text-[var(--text-secondary)]">
               <span className="flex items-center gap-1.5">
                 <Mail size={13} className="text-[var(--brand)]" />
                 <a href="mailto:rcasinnovationstartupcell@rathinam.in" className="hover:text-[var(--brand)] underline decoration-dotted">

@@ -140,7 +140,7 @@ function SessionCard({ session: s, index }: { session: Session; index: number })
           <p className="text-xs mb-2 leading-relaxed text-[var(--text-secondary)]">{s.description}</p>
         )}
 
-        <div className="flex flex-wrap items-center gap-3 text-[10px] text-[var(--text-secondary)]">
+        <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-secondary)]">
           <span className="flex items-center gap-1"><Calendar size={11} /> {format(parseISO(s.scheduledAt), 'EEEE, dd MMM yyyy')}</span>
           <span className="flex items-center gap-1"><Clock size={11} /> {format(parseISO(s.scheduledAt), 'hh:mm a')} · {s.durationMin} min</span>
           <span className="flex items-center gap-1"><Video size={11} /> {s.facultyName}</span>
@@ -173,7 +173,7 @@ function SessionCard({ session: s, index }: { session: Session; index: number })
             <Users size={12} /> Register
           </button>
         )}
-        <button className="btn btn-ghost btn-sm text-[10px]" style={{ padding: '2px' }} onClick={() => navigate(`/sessions/${s.id}`)}>
+        <button className="btn btn-ghost btn-sm text-xs" style={{ padding: '2px' }} onClick={() => navigate(`/sessions/${s.id}`)}>
           View Details
         </button>
       </div>

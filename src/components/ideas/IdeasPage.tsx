@@ -80,13 +80,13 @@ export default function IdeasPage() {
             {CATEGORIES.map(cat => (
               <button key={cat} onClick={() => setCategory(cat)}
                 className={`btn btn-sm gap-1 ${category === cat ? 'btn-primary' : 'btn-secondary'}`}
-                style={{ fontSize: 11, padding: '5px 10px' }}>
+                style={{ fontSize: 12, padding: '5px 10px' }}>
                 {CAT_ICONS[cat]} {cat}
               </button>
             ))}
           </div>
           <div className="flex gap-2 flex-wrap items-center">
-            <span className="text-[10px] uppercase tracking-wider font-semibold text-[var(--text-muted)] mr-1">Difficulty:</span>
+            <span className="text-xs uppercase tracking-wider font-semibold text-[var(--text-muted)] mr-1">Difficulty:</span>
             <div className="flex gap-1.5">
               {['All','Beginner','Intermediate','Advanced'].map(d => (
                 <button key={d} onClick={() => setDifficulty(d)}
@@ -138,10 +138,10 @@ function IdeaCard({ idea, index, bookmarked, onBookmark }:
       <div className="p-4 pb-3 flex-1 bg-[var(--bg-card)]">
         <div className="flex items-start justify-between gap-2 mb-3">
           <div className="flex flex-wrap gap-1.5">
-            <span className={`badge ${DIFF_COLOR[idea.difficulty]}`} style={{ fontSize: 9 }}>
+            <span className={`badge ${DIFF_COLOR[idea.difficulty]}`} style={{ fontSize: 10 }}>
               {idea.difficulty}
             </span>
-            <span className="badge badge-violet" style={{ fontSize: 9 }}>
+            <span className="badge badge-violet" style={{ fontSize: 10 }}>
               <span className="inline-block mr-0.5">{CAT_ICONS[idea.category]}</span>{idea.category}
             </span>
           </div>
@@ -162,26 +162,26 @@ function IdeaCard({ idea, index, bookmarked, onBookmark }:
         {idea.mentorRecommendation && (
           <div className="mt-3 flex items-start gap-1.5 p-2 rounded-md bg-[var(--bg-selected)] border border-[var(--brand-border)]">
             <Star size={11} className="text-[var(--brand)] mt-0.5 flex-shrink-0" />
-            <p className="text-[10px] text-[var(--text-secondary)] leading-relaxed">{idea.mentorRecommendation}</p>
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed">{idea.mentorRecommendation}</p>
           </div>
         )}
 
         {/* Tech stack */}
         <div className="flex flex-wrap gap-1 mt-3.5">
           {idea.techStack.slice(0, 4).map(t => (
-            <span key={t} className="badge badge-indigo" style={{ fontSize: 9 }}>
+            <span key={t} className="badge badge-indigo" style={{ fontSize: 10 }}>
               <Tag size={8} /> {t}
             </span>
           ))}
           {idea.techStack.length > 4 && (
-            <span className="badge badge-indigo" style={{ fontSize: 9 }}>+{idea.techStack.length - 4}</span>
+            <span className="badge badge-indigo" style={{ fontSize: 10 }}>+{idea.techStack.length - 4}</span>
           )}
         </div>
       </div>
 
       {/* Footer */}
       <div className="px-4 py-3 flex items-center justify-between border-t border-[var(--border-muted)] bg-[var(--bg-card-2)]">
-        <div className="flex items-center gap-3 text-[10px] text-[var(--text-secondary)]">
+        <div className="flex items-center gap-3 text-xs text-[var(--text-secondary)]">
           <span className="flex items-center gap-1"><Clock size={11} /> {idea.durationWeeks}w</span>
           <span className="flex items-center gap-1"><Lightbulb size={11} /> {idea.viewCount} views</span>
         </div>

@@ -6,6 +6,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useAuthStore } from '../../stores/authStore';
 import { Menu, Bell, Search, ChevronDown, Settings, User, LogOut } from 'lucide-react';
+import { MOCK_MODULES, MOCK_SESSIONS } from '../../data/mockData';
 
 const PAGE_TITLES: Record<string, string> = {
   '/dashboard':    'Dashboard',
@@ -31,8 +32,12 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
   const navigate = useNavigate();
   const [notifOpen, setNotifOpen]     = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
+
   const notifRef   = useRef<HTMLDivElement>(null);
   const profileRef = useRef<HTMLDivElement>(null);
+  const searchRef  = useRef<HTMLDivElement>(null);
 
   let pageTitle = PAGE_TITLES[location.pathname] || 'CII AI Hub';
   if (location.pathname.startsWith('/sessions/') && location.pathname !== '/sessions') {
@@ -51,10 +56,44 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
     function handler(e: MouseEvent) {
       if (notifRef.current && !notifRef.current.contains(e.target as Node)) setNotifOpen(false);
       if (profileRef.current && !profileRef.current.contains(e.target as Node)) setProfileOpen(false);
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) setSearchFocused(false);
     }
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
+
+  const searchResults = searchQuery.trim() ? [
+    ...MOCK_MODULES.filter(m =>
+      m.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      m.description.toLowerCase().includes(searchQuery.toLowerCase())
+    ).map(m => ({
+      id: m.id,
+      title: m.title,
+      category: 'Module',
+      path: '/modules',
+      icon: '📚'
+    })),
+    ...MOCK_SESSIONS.filter(s =>
+      s.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      s.type.toLowerCase().includes(searchQuery.toLowerCase())
+    ).map(s => ({
+      id: s.id,
+      title: s.title,
+      category: 'Session',
+      path: `/sessions/${s.id}`,
+      icon: '📅'
+    }))
+  ].slice(0, 5) : [];
+
+  const handleSuggestionClick = (item: { path: string; category: string; id: string }) => {
+    if (item.category === 'Module') {
+      navigate(item.path, { state: { moduleId: item.id } });
+    } else {
+      navigate(item.path);
+    }
+    setSearchQuery('');
+    setSearchFocused(false);
+  };
 
   const notifications = [
     { id: 1, msg: 'AI Basics session tomorrow at 9 AM', time: '2h ago', unread: true, icon: '📅' },
@@ -95,11 +134,11 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
       <div style={{ flex: 1 }} />
 
       {/* Search bar */}
-      <div className="relative hidden md:flex items-center" style={{ width: 220 }}>
+      <div ref={searchRef} className="relative hidden md:flex items-center" style={{ width: 220 }}>
         <Search
           size={13}
           color="var(--text-muted)"
-          style={{ position: 'absolute', left: 10, pointerEvents: 'none' }}
+          style={{ position: 'absolute', left: 10, pointerEvents: 'none', zIndex: 10 }}
         />
         <input
           className="input"
@@ -111,7 +150,84 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
             background: 'var(--bg-card)',
           }}
           placeholder="Search modules, sessions..."
+          value={searchQuery}
+          onChange={e => {
+            setSearchQuery(e.target.value);
+            setSearchFocused(true);
+          }}
+          onFocus={() => setSearchFocused(true)}
         />
+
+        <AnimatePresence>
+          {searchFocused && searchQuery.trim() && (
+            <motion.div
+              initial={{ opacity: 0, y: 6, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 6, scale: 0.98 }}
+              transition={{ duration: 0.12 }}
+              style={{
+                position: 'absolute',
+                left: 0, right: 0, top: 38,
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-strong)',
+                borderRadius: 'var(--r-md)',
+                boxShadow: 'var(--shadow-lg)',
+                zIndex: 60,
+                overflow: 'hidden',
+                maxHeight: 280,
+                overflowY: 'auto',
+              }}
+            >
+              {searchResults.length === 0 ? (
+                <div style={{ padding: '10px 12px', fontSize: 11, color: 'var(--text-muted)', textAlign: 'center' }}>
+                  No matches found
+                </div>
+              ) : (
+                <div style={{ padding: '4px' }}>
+                  {searchResults.map(item => (
+                    <button
+                      key={`${item.category}-${item.id}`}
+                      onClick={() => handleSuggestionClick(item)}
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 8,
+                        width: '100%',
+                        padding: '8px 10px',
+                        borderRadius: 'var(--r-sm)',
+                        background: 'transparent',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontSize: 11.5,
+                        color: 'var(--text-secondary)',
+                        transition: 'background 120ms ease, color 120ms ease',
+                        textAlign: 'left',
+                      }}
+                      onMouseEnter={e => {
+                        (e.currentTarget as HTMLElement).style.background = 'var(--bg-hover)';
+                        (e.currentTarget as HTMLElement).style.color = 'var(--text-primary)';
+                      }}
+                      onMouseLeave={e => {
+                        (e.currentTarget as HTMLElement).style.background = 'transparent';
+                        (e.currentTarget as HTMLElement).style.color = 'var(--text-secondary)';
+                      }}
+                    >
+                      <span style={{ fontSize: 13, flexShrink: 0 }}>{item.icon}</span>
+                      <div style={{ flex: 1, minWidth: 0 }}>
+                        <div style={{ fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          {item.title}
+                        </div>
+                        <div style={{ fontSize: 9, color: 'var(--text-muted)', marginTop: 1 }}>
+                          {item.category}
+                        </div>
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Notification bell */}

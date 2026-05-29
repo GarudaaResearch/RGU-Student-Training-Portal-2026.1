@@ -147,7 +147,7 @@ export default function WhatsappHelpPage() {
                     <div className="text-[11px] font-bold text-[var(--text-primary)] leading-tight">
                       {item.title}
                     </div>
-                    <p className="text-[10px] text-[var(--text-secondary)] mt-1 leading-snug">
+                    <p className="text-xs text-[var(--text-secondary)] mt-1 leading-snug">
                       {item.desc}
                     </p>
                   </div>
@@ -170,7 +170,7 @@ export default function WhatsappHelpPage() {
               ].map((rule, idx) => (
                 <div key={idx} className="flex items-start gap-2.5">
                   <CheckCircle size={13} className="text-[#25D366] flex-shrink-0 mt-0.5" />
-                  <span className="text-[11px] text-[var(--text-secondary)] leading-relaxed font-medium">
+                  <span className="text-xs text-[var(--text-secondary)] leading-relaxed font-medium">
                     {rule}
                   </span>
                 </div>
@@ -180,16 +180,16 @@ export default function WhatsappHelpPage() {
 
           {/* Incubation Cell Support Office Contacts */}
           <div className="card p-5 bg-[var(--bg-card)] border border-[var(--border)] rounded-xl flex flex-col gap-3">
-            <div className="text-[10px] font-bold text-[var(--text-muted)] uppercase tracking-wider">
+            <div className="text-xs font-bold text-[var(--text-muted)] uppercase tracking-wider">
               Incubation Cell Administrative Helpdesk
             </div>
-            <div className="text-xs font-bold text-[var(--text-primary)]">
+            <div className="text-sm font-bold text-[var(--text-primary)]">
               Still Facing Connectivity Issues?
             </div>
-            <p className="text-[10px] text-[var(--text-secondary)] leading-relaxed">
+            <p className="text-xs text-[var(--text-secondary)] leading-relaxed text-justify">
               If the QR code does not load or you cannot launch the WhatsApp application link, contact our physical helpdesk in the Centre for Innovation and Incubation laboratory.
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-1.5 text-[10px] font-semibold text-[var(--text-secondary)]">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-1.5 text-xs font-semibold text-[var(--text-secondary)]">
               <span className="flex items-center gap-1.5">
                 <Mail size={13} className="text-[var(--brand)]" />
                 <a href="mailto:rcasinnovationstartupcell@rathinam.in" className="hover:text-[var(--brand)] underline decoration-dotted">

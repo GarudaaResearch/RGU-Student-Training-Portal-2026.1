@@ -139,7 +139,7 @@ export default function CertificatesPage() {
               <div className="text-lg font-bold text-[var(--text-primary)]">
                 {stat.value}
               </div>
-              <div className="text-[10px] font-semibold text-[var(--text-secondary)] uppercase tracking-wider">{stat.label}</div>
+              <div className="text-xs font-semibold text-[var(--text-secondary)] uppercase tracking-wider">{stat.label}</div>
             </div>
           </div>
         ))}
@@ -205,12 +205,12 @@ function CertCard({ cert, index, onView, locked = false }: {
         <div className="flex items-start justify-between mb-3">
           <div className="text-3xl">{cert.icon}</div>
           <div className="flex flex-col items-end gap-1">
-            <span className={`badge ${TYPE_BADGE[cert.type]}`} style={{ fontSize: 9 }}>
+            <span className={`badge ${TYPE_BADGE[cert.type]}`} style={{ fontSize: 10 }}>
               {TYPE_LABEL[cert.type]}
             </span>
             {locked
-              ? <span className="badge badge-red" style={{ fontSize: 9 }}><Lock size={8} /> Locked</span>
-              : <span className="badge badge-green" style={{ fontSize: 9 }}><CheckCircle size={8} /> Earned</span>
+              ? <span className="badge badge-red" style={{ fontSize: 10 }}><Lock size={8} /> Locked</span>
+              : <span className="badge badge-green" style={{ fontSize: 10 }}><CheckCircle size={8} /> Earned</span>
             }
           </div>
         </div>
@@ -221,7 +221,7 @@ function CertCard({ cert, index, onView, locked = false }: {
         <div className="text-xs text-[var(--text-secondary)]">{cert.issuer}</div>
 
         {!locked && cert.issuedAt && (
-          <div className="flex items-center gap-1 mt-2 text-[10px] text-[var(--text-secondary)]">
+          <div className="flex items-center gap-1 mt-2 text-xs text-[var(--text-secondary)]">
             <Calendar size={10} />
             Issued {new Date(cert.issuedAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
           </div>
@@ -230,10 +230,10 @@ function CertCard({ cert, index, onView, locked = false }: {
 
       {/* Skills */}
       <div className="px-5 py-3 bg-[var(--bg-card)]">
-        <div className="text-[10px] font-semibold text-[var(--text-secondary)] mb-2 uppercase tracking-wide">Skills Validated</div>
+        <div className="text-xs font-semibold text-[var(--text-secondary)] mb-2 uppercase tracking-wide">Skills Validated</div>
         <div className="flex flex-wrap gap-1">
           {cert.skills.map(skill => (
-            <span key={skill} className="badge badge-indigo" style={{ fontSize: 9 }}>{skill}</span>
+            <span key={skill} className="badge badge-indigo" style={{ fontSize: 10 }}>{skill}</span>
           ))}
         </div>
       </div>
@@ -241,7 +241,7 @@ function CertCard({ cert, index, onView, locked = false }: {
       {/* Actions */}
       <div className="px-5 py-3 flex items-center gap-2 border-t border-[var(--border-muted)] bg-[var(--bg-card-2)]">
         {locked ? (
-          <span className="text-[10px] text-[var(--text-muted)] font-medium">Complete module to unlock</span>
+          <span className="text-xs text-[var(--text-muted)] font-medium">Complete module to unlock</span>
         ) : (
           <>
             <button
@@ -287,10 +287,10 @@ function CertificateModal({ cert, student, onClose }: {
           <div className="absolute inset-3 rounded-lg pointer-events-none border border-[var(--border-brand)]" />
 
           <div className="text-4xl mb-3">{cert.icon}</div>
-          <div className="text-[10px] font-bold mb-1 tracking-widest text-[var(--brand)]">
+          <div className="text-xs font-bold mb-1 tracking-widest text-[var(--brand)]">
             CERTIFICATE OF COMPLETION
           </div>
-          <div className="text-[10px] mb-4 text-[var(--text-secondary)] uppercase tracking-wide">
+          <div className="text-xs mb-4 text-[var(--text-secondary)] uppercase tracking-wide">
             Centre for Innovation and Incubation · Rajiv Gandhi University
           </div>
 
@@ -298,7 +298,7 @@ function CertificateModal({ cert, student, onClose }: {
           <div className="text-xl font-bold mb-1 text-[var(--text-primary)]">
             {student?.name || 'Student'}
           </div>
-          <div className="text-[10px] mb-4 text-[var(--text-secondary)] opacity-80">
+          <div className="text-xs mb-4 text-[var(--text-secondary)] opacity-80">
             {student?.rollNo} · {student?.degreeName} · {student?.batch}
           </div>
 
@@ -309,11 +309,11 @@ function CertificateModal({ cert, student, onClose }: {
 
           <div className="flex flex-wrap justify-center gap-1.5 mb-6">
             {cert.skills.map(skill => (
-              <span key={skill} className="badge badge-indigo" style={{ fontSize: 9 }}>{skill}</span>
+              <span key={skill} className="badge badge-indigo" style={{ fontSize: 10 }}>{skill}</span>
             ))}
           </div>
 
-          <div className="flex items-center justify-center gap-6 text-[10px] text-[var(--text-secondary)]">
+          <div className="flex items-center justify-center gap-6 text-xs text-[var(--text-secondary)]">
             <div className="text-center">
               <div className="font-semibold text-[var(--text-primary)]">
                 {new Date(cert.issuedAt).toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' })}
@@ -331,7 +331,7 @@ function CertificateModal({ cert, student, onClose }: {
           <div className="mt-6 pt-4 flex justify-center gap-12 border-t border-[var(--border-muted)]">
             <div className="text-center">
               <div className="text-xs font-bold text-[var(--text-primary)]">Prof. R. Anjit Raja</div>
-              <div className="text-[10px] text-[var(--text-secondary)] opacity-80">Director, CII · RGU</div>
+              <div className="text-xs text-[var(--text-secondary)] opacity-80">Director, CII · RGU</div>
             </div>
           </div>
         </div>

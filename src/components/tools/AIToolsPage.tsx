@@ -112,8 +112,8 @@ export default function AIToolsPage() {
             </div>
             <div>
               <div className="flex items-center gap-2 mb-1.5">
-                <span className="badge badge-amber" style={{ fontSize: 9 }}><Zap size={9} /> Tool of the Day</span>
-                <span className="badge badge-green" style={{ fontSize: 9 }}>Free</span>
+                <span className="badge badge-amber" style={{ fontSize: 10 }}><Zap size={9} /> Tool of the Day</span>
+                <span className="badge badge-green" style={{ fontSize: 10 }}>Free</span>
               </div>
               <div className="text-base font-bold text-[var(--text-primary)]">
                 {toolOfDay.name}
@@ -170,7 +170,7 @@ export default function AIToolsPage() {
                 <h3 className="text-sm font-bold text-[var(--text-primary)]">
                   {group.name}
                 </h3>
-                <span className="badge badge-indigo" style={{ fontSize: 9 }}>{group.tools.length}</span>
+                <span className="badge badge-indigo" style={{ fontSize: 10 }}>{group.tools.length}</span>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                 {group.tools.map((tool, i) => (
@@ -221,16 +221,16 @@ function ToolCard({ tool, index, color }: { tool: AITool; index: number; color: 
           </div>
           <div className="flex items-center gap-1.5 flex-shrink-0">
             {tool.isFeatured && (
-              <span className="badge badge-amber" style={{ fontSize: 9, padding: '2px 6px' }}>
+              <span className="badge badge-amber" style={{ fontSize: 10, padding: '2px 6px' }}>
                 <Star size={8} /> Featured
               </span>
             )}
             {tool.isPaid ? (
-              <span className="badge badge-violet" style={{ fontSize: 9, padding: '2px 6px' }}>
+              <span className="badge badge-violet" style={{ fontSize: 10, padding: '2px 6px' }}>
                 <Lock size={8} /> Paid
               </span>
             ) : (
-              <span className="badge badge-green" style={{ fontSize: 9, padding: '2px 6px' }}>Free</span>
+              <span className="badge badge-green" style={{ fontSize: 10, padding: '2px 6px' }}>Free</span>
             )}
           </div>
         </div>
@@ -244,7 +244,7 @@ function ToolCard({ tool, index, color }: { tool: AITool; index: number; color: 
 
         <div className="flex flex-wrap gap-1 mt-3">
           {tool.tags.slice(0, 3).map(tag => (
-            <span key={tag} className="badge badge-indigo" style={{ fontSize: 9, padding: '2px 6px' }}>
+            <span key={tag} className="badge badge-indigo" style={{ fontSize: 10, padding: '2px 6px' }}>
               {tag}
             </span>
           ))}
@@ -252,7 +252,7 @@ function ToolCard({ tool, index, color }: { tool: AITool; index: number; color: 
       </div>
 
       <div className="px-4 py-3 flex items-center justify-between border-t border-[var(--border-muted)] bg-[var(--bg-card-2)]">
-        <span className="text-[10px] text-[var(--text-secondary)] uppercase font-semibold">{tool.category}</span>
+        <span className="text-xs text-[var(--text-secondary)] uppercase font-semibold">{tool.category}</span>
         <span className="flex items-center gap-1 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity"
           style={{ color }}>
           Open <ExternalLink size={11} />

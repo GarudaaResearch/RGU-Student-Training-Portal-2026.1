@@ -44,7 +44,7 @@ export default function LoginPage() {
         {/* Logo — Fluent / Microsoft Inspired */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center mb-3">
-            <img src="/rgu-logo.png" alt="Royal Group of Universities Logo" className="h-16 w-auto object-contain" />
+            <img src="/rgu-logo.png" alt="Rathinam Global Deemed to be University (RGU) Logo" className="h-16 w-auto object-contain" />
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-[var(--text-primary)]" style={{ margin: 0 }}>
             CII AI Training Hub
@@ -62,7 +62,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div>
-              <label className="block text-[10px] font-bold mb-1.5 text-[var(--text-secondary)] uppercase tracking-wider">
+              <label className="block text-xs font-bold mb-1.5 text-[var(--text-secondary)] uppercase tracking-wider">
                 USERNAME / ROLL NUMBER
               </label>
               <input
@@ -74,7 +74,7 @@ export default function LoginPage() {
               />
             </div>
             <div>
-              <label className="block text-[10px] font-bold mb-1.5 text-[var(--text-secondary)] uppercase tracking-wider">
+              <label className="block text-xs font-bold mb-1.5 text-[var(--text-secondary)] uppercase tracking-wider">
                 PASSWORD
               </label>
               <div className="relative">
@@ -115,7 +115,7 @@ export default function LoginPage() {
           {/* Divider */}
           <div className="flex items-center gap-3 my-6">
             <div className="divider flex-1" />
-            <span className="text-[10px] uppercase font-bold tracking-wider text-[var(--text-muted)]">Quick Demo</span>
+            <span className="text-xs uppercase font-bold tracking-wider text-[var(--text-muted)]">Quick Demo</span>
             <div className="divider flex-1" />
           </div>
 
@@ -140,8 +140,8 @@ export default function LoginPage() {
         </div>
 
         {/* Footer */}
-        <p className="text-center text-[10px] mt-6 text-[var(--text-secondary)] opacity-80">
-          Prof. R. Anjit Raja · Director, CII · Royal Group of Universities
+        <p className="text-center text-xs mt-6 text-[var(--text-secondary)] opacity-80">
+          Prof. R. Anjit Raja · Director, CII · Rathinam Global Deemed to be University (RGU)
         </p>
       </motion.div>
     </div>

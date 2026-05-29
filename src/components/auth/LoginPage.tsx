@@ -39,7 +39,8 @@ export default function LoginPage() {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4 }}
-        className="w-full max-w-md px-4"
+        className="w-full px-4"
+        style={{ maxWidth: '490px' }}
       >
         {/* Logo — Fluent / Microsoft Inspired */}
         <div className="text-center mb-8">
@@ -55,7 +56,7 @@ export default function LoginPage() {
         </div>
 
         {/* Login card */}
-        <div className="card rounded-lg p-8 bg-[var(--bg-card)] border border-[var(--border-strong)]" style={{ boxShadow: 'var(--shadow-xl)' }}>
+        <div className="card rounded-lg bg-[var(--bg-card)] border border-[var(--border-strong)]" style={{ padding: '40px', boxShadow: 'var(--shadow-xl)' }}>
           <h2 className="text-base font-semibold mb-6 text-[var(--text-primary)]">
             Sign in to your account
           </h2>
@@ -77,7 +78,7 @@ export default function LoginPage() {
               <label className="block text-xs font-bold mb-1.5 text-[var(--text-secondary)] uppercase tracking-wider">
                 PASSWORD
               </label>
-              <div className="relative">
+              <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
                 <input
                   className="input"
                   type={showPw ? 'text' : 'password'}
@@ -85,15 +86,29 @@ export default function LoginPage() {
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   autoComplete="current-password"
-                  style={{ paddingRight: 40 }}
+                  style={{ paddingRight: '44px' }}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPw(v => !v)}
-                  className="btn btn-ghost btn-icon absolute right-1.5 top-1/2 -translate-y-1/2"
-                  style={{ padding: '4px' }}
+                  style={{
+                    position: 'absolute',
+                    right: '12px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    background: 'transparent',
+                    border: 'none',
+                    padding: '4px',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: 'var(--text-secondary)',
+                    opacity: 0.8,
+                    zIndex: 10,
+                  }}
                 >
-                  {showPw ? <EyeOff size={15} className="text-[var(--text-secondary)]" /> : <Eye size={15} className="text-[var(--text-secondary)]" />}
+                  {showPw ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
               </div>
             </div>
